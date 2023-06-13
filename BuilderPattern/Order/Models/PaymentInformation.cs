@@ -6,7 +6,7 @@ namespace BuilderPattern.Order.Models
         public long Id { get; set; }
         public string PaymentId { get; set; }
         public decimal Amount { get; set; }
-        public DateTime PaymentDate { get; set; }
+        public DateTime PaymentDate { get; set; } = DateTime.Now;
         public PaymentMethodEnum PaymentMethod { get; set; }
     }
     public enum PaymentMethodEnum

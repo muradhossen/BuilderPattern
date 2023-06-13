@@ -12,44 +12,24 @@ OrderBuilder orderBuilder = new OrderBuilder()
     })
     .AddProduct(new Product()
     {
-        Discount = 100,
-        Price = 10010,
+        Discount = 10,
+        Price = 10000,
         ProductId = "#1010",
-        Name = "Banana"
-    })
-    .AddProduct(new Product()
-    {
-        Discount = 100,
-        Price = 10010,
-        ProductId = "#1011",
-        Name = "Apple"
-    })
-    .AddProduct(new Product()
-    {
-        Discount = 100,
-        Price = 25000,
-        ProductId = "#1012",
-        Name = "Sangsum Gallaxy S3"
-    })
-    .AddProduct(new Product()
-    {
-        Discount = 100,
-        Price = 10010,
-        ProductId = "#1013",
-        Name = "Table"
-    })
-    .AddProduct(new Product()
-    {
-        Discount = 100,
-        Price = 10010,
-        ProductId = "#1014",
-        Name = "HP G3 Laptop"
+        Name = "Laptop"
     })
     .AddAddon(new Addon()
     {
-        Name = "Kyeboard",
-         Price = 1200,
-         ProductId = "#8888"
+        Name = "",
+        Price = 1200,
+        ProductId = "#8888"
+    });
+
+    orderBuilder = orderBuilder.AddProduct(new Product()
+    {
+        Discount = 0,
+        Price = 10000,
+        ProductId = "#1010",
+        Name = "Laptop"
     });
 
     orderBuilder.AddPaymentInformation(new PaymentInformation()
@@ -65,3 +45,26 @@ Console.WriteLine("Order build.");
 
 Console.ReadLine();
 
+
+
+//.AddProduct(new Product()
+// {
+//     Discount = 100,
+//     Price = 25000,
+//     ProductId = "#1012",
+//     Name = "Sangsum Gallaxy S3"
+// })
+//    .AddProduct(new Product()
+//    {
+//        Discount = 100,
+//        Price = 10010,
+//        ProductId = "#1013",
+//        Name = "Table"
+//    })
+//    .AddProduct(new Product()
+//    {
+//        Discount = 100,
+//        Price = 10010,
+//        ProductId = "#1014",
+//        Name = "HP G3 Laptop"
+//    })

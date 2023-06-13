@@ -9,6 +9,8 @@ public class Order
         Addons = new List<Addon>();
         DeliveryInformation = new();
         PaymentInformation = new();
+        OrderDate = DateTime.Now;
+        OrderId = Guid.NewGuid().ToString();
     }
     public int Id { get; set; }
     public string OrderId { get; set; }

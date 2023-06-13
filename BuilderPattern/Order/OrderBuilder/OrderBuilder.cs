@@ -18,13 +18,20 @@ public class OrderBuilder
     {
         if (product == null) ArgumentNullException.ThrowIfNull(product, nameof(product));
 
-        if (this.Order.Products.Any(c => c.ProductId == product.ProductId)) { throw new Exception("Product cannot added multiple times "); }
+        var existingProduct = Order.Products.FirstOrDefault(c => c.ProductId == product.ProductId);
+
+        IncriseQuantity(existingProduct ?? product);
+
+        if (existingProduct == null)
+        {
+            Order.Products.Add(product);
+        }
 
         SetTotalAmount(product.Price, product.Discount);
 
-        Order.Products.Add(product);
         return this;
     }
+    private void IncriseQuantity(Product product) => product.Quantity += 1;
     public OrderBuilder AddAddon(Addon addon)
     {
         if (addon == null) ArgumentNullException.ThrowIfNull(addon, nameof(addon));
